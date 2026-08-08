@@ -6,11 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Testing backend"
+      - run: echo "Backend tests passing"
 
   frontend:
     runs-on: ubuntu-latest
+    needs: backend
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Testing frontend"
+      - run: echo "Building frontend after backend success"
 
